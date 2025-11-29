@@ -1,0 +1,36 @@
+:root{
+  --bg:transparent; --panel:#151515; --accent:#0ec1ff; --accent2:#ef233c; --muted:#bdbdbd; --gold:#f6c34a;
+}
+*{box-sizing:border-box;font-family:Inter, Arial, sans-serif}
+body{margin:0;background:var(--bg);color:#fff}
+.root{width:980px;max-width:100%;padding:14px;border-radius:8px}
+.header{background:linear-gradient(90deg,var(--accent),var(--accent2));padding:10px;border-radius:6px;text-align:center;font-weight:800;font-size:28px;color:#fff}
+.main{display:flex;justify-content:space-between;align-items:center;padding:16px;background:rgba(0,0,0,0.45);border-radius:8px;margin-top:12px}
+.left{flex:1;padding-right:20px}
+.event-text{font-size:18px;color:var(--muted);font-weight:700}
+.event-detail{font-size:28px;margin-top:8px;color:#fff;letter-spacing:0.6px}
+.right{width:340px;display:flex;flex-direction:column;align-items:center}
+.timer-box{background:rgba(255,255,255,0.04);padding:12px 18px;border-radius:12px;min-width:260px;text-align:center}
+.timer{font-family:monospace;font-size:48px;letter-spacing:2px}
+.mode-label{font-size:12px;color:var(--muted);margin-top:6px}
+.bottom{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.goals{display:flex;gap:12px;flex-wrap:wrap}
+.goal{background:rgba(255,255,255,0.03);padding:8px;border-radius:6px;font-size:13px;color:var(--muted)}
+.date-time{font-size:13px;color:var(--muted)}
+
+/* popup */
+.add-bubble{position:fixed;right:24px;top:24px;background:var(--accent2);padding:10px 14px;border-radius:18px;font-weight:700;transform-origin:center;opacity:0;pointer-events:none}
+.pop{animation:pop .55s cubic-bezier(.16,.9,.3,1) both}
+@keyframes pop{0%{transform:scale(.6);opacity:0}50%{transform:scale(1.08);}100%{transform:scale(1);opacity:1}}
+
+/* settings */
+.settings-panel{position:fixed;left:20px;top:20px;background:rgba(0,0,0,0.85);padding:16px;border-radius:8px;width:320px;color:#fff;z-index:999}
+.hidden{display:none}
+.settings-panel label{display:block;margin:8px 0;font-size:13px;color:var(--muted)}
+.settings-panel input, .settings-panel select{width:100%;padding:6px;margin-top:4px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#fff}
+.settings-actions{display:flex;gap:8px;margin-top:10px}
+.settings-actions button{padding:8px 10px;border-radius:6px;border:0;cursor:pointer;background:var(--accent)}
+
+/* small */
+.history{margin-top:10px;font-size:12px;color:var(--muted);max-height:80px;overflow:auto}
+.credits{margin-top:8px;font-size:11px;color:var(--muted)}

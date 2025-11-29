@@ -1,0 +1,94 @@
+{
+  "name": "Zoutt Subathon Widget - Final",
+  "author": "Zoutt Freelancer",
+  "description": "Widget Subathon para StreamElements. Añade tiempo por subs, donaciones y cheers. Configurable.",
+  "version": "1.0.0",
+  "files": [
+    "widget.html",
+    "widget.css",
+    "widget.js"
+  ],
+  "options": {
+    "noPreview": false
+  },
+  "fields": [
+    {
+      "name": "mode",
+      "type": "text",
+      "label": "Modo (countdown/accumulate)",
+      "default": "countdown"
+    },
+    {
+      "name": "initialHours",
+      "type": "number",
+      "label": "Horas iniciales",
+      "default": 24
+    },
+    {
+      "name": "tier1Min",
+      "type": "number",
+      "label": "Tier1 minutos",
+      "default": 5
+    },
+    {
+      "name": "tier2Min",
+      "type": "number",
+      "label": "Tier2 minutos",
+      "default": 10
+    },
+    {
+      "name": "tier3Min",
+      "type": "number",
+      "label": "Tier3 minutos",
+      "default": 30
+    },
+    {
+      "name": "donationPerDollarMin",
+      "type": "number",
+      "label": "Minutos por $1 (donación)",
+      "default": 1
+    },
+    {
+      "name": "bitsPerUnit",
+      "type": "number",
+      "label": "Bits por 1 minuto",
+      "default": 100
+    },
+    {
+      "name": "popupDuration",
+      "type": "number",
+      "label": "Duración popup (s)",
+      "default": 3
+    },
+    {
+      "name": "goalHours",
+      "type": "number",
+      "label": "Meta horas (tiempo)",
+      "default": 24
+    },
+    {
+      "name": "goalSubs",
+      "type": "number",
+      "label": "Meta subs",
+      "default": 100
+    },
+    {
+      "name": "goalDonations",
+      "type": "number",
+      "label": "Meta donaciones $",
+      "default": 50
+    },
+    {
+      "name": "goalCheers",
+      "type": "number",
+      "label": "Meta cheers",
+      "default": 1000
+    },
+    {
+      "name": "locale",
+      "type": "text",
+      "label": "Locale",
+      "default": "es-ES"
+    }
+  ]
+}

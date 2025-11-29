@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Subatón Widget - Zoutt</title>
+<link rel="stylesheet" href="widget.css" />
+</head>
+<body>
+<div id="root" class="root">
+  <div class="header">SUBATÓN</div>
+  <div class="main">
+    <div class="left">
+      <div id="eventText" class="event-text"><span class="muted">Para añadir más tiempo</span></div>
+      <div id="eventDetail" class="event-detail"></div>
+      <div id="history" class="history"></div>
+    </div>
+    <div class="right">
+      <div id="timerBox" class="timer-box">
+        <div id="timer" class="timer">00:00:00</div>
+        <div id="modeLabel" class="mode-label">Cuenta regresiva</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="goals" id="goals">
+      <div class="goal">Tiempo: <span id="goalTime">24:00:00</span></div>
+      <div class="goal">Subs: <span id="goalSubs">100</span></div>
+      <div class="goal">Donaciones: $<span id="goalDon">50</span></div>
+      <div class="goal">Cheers: <span id="goalCheers">1000</span></div>
+    </div>
+    <div id="dateTime" class="date-time"></div>
+  </div>
+
+  <div id="addBubble" class="add-bubble" aria-hidden="true">add +0m</div>
+
+  <div id="settingsPanel" class="settings-panel hidden" role="dialog" aria-hidden="true">
+    <h3>Configuración</h3>
+    <label>Modo: <select id="modeSelect"><option value="countdown">Cuenta regresiva</option><option value="accumulate">Acumulativo</option></select></label>
+    <label>Horas iniciales: <input id="hoursInput" type="number" min="0" value="24"></label>
+    <label>Tier1 minutos: <input id="tier1Input" type="number" min="0" value="5"></label>
+    <label>Tier2 minutos: <input id="tier2Input" type="number" min="0" value="10"></label>
+    <label>Tier3 minutos: <input id="tier3Input" type="number" min="0" value="30"></label>
+    <label>$ por minuto (donación): <input id="donationRate" type="number" min="1" value="1"></label>
+    <label>Bits por minuto: <input id="bitsUnit" type="number" min="1" value="100"></label>
+    <label>Duración popup (s): <input id="popupDur" type="number" min="1" value="3"></label>
+    <div class="settings-actions">
+      <button id="saveSettings">Guardar</button>
+      <button id="closeSettings">Cerrar</button>
+    </div>
+    <div class="credits">Créditos: Zoutt - https://zoutt.netlify.app/</div>
+  </div>
+</div>
+
+<script src="widget.js"></script>
+</body>
+</html>
