@@ -98,6 +98,14 @@ function applyEvent(evt){
   // TODO: goal updates
 }
 
+//---------------------------------------------
+// SIMULATOR MODE: listener for simulator.html
+//---------------------------------------------
+window.addEventListener("onWidgetEvent", (ev) => {
+    if (!ev || !ev.detail) return;
+    applyEvent(ev.detail);
+});
+
 // StreamElements event handler
 function onWidgetLoad(obj){
   // merge settings
