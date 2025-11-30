@@ -1,59 +1,17 @@
 {
-  "name": "Zoutt Subathon Widget - Final",
+  "name": "Zoutt Subathon Widget",
   "author": "Zoutt Freelancer",
-  "description": "Widget Subathon para StreamElements. Añade tiempo por subs, donaciones y cheers. Configurable.",
+  "description": "Subathon widget. Añade tiempo por subs, donaciones y cheers. Configurable.",
   "version": "1.0.0",
+  "options": {
+    "noPreview": false
+  },
   "files": [
     "widget.html",
     "widget.css",
     "widget.js"
   ],
-  "options": {
-    "noPreview": false
-  },
   "fields": [
-    {
-      "name": "mode",
-      "type": "text",
-      "label": "Modo (countdown/accumulate)",
-      "default": "countdown"
-    },
-    {
-      "name": "initialHours",
-      "type": "number",
-      "label": "Horas iniciales",
-      "default": 24
-    },
-    {
-      "name": "tier1Min",
-      "type": "number",
-      "label": "Tier1 minutos",
-      "default": 5
-    },
-    {
-      "name": "tier2Min",
-      "type": "number",
-      "label": "Tier2 minutos",
-      "default": 10
-    },
-    {
-      "name": "tier3Min",
-      "type": "number",
-      "label": "Tier3 minutos",
-      "default": 30
-    },
-    {
-      "name": "donationPerDollarMin",
-      "type": "number",
-      "label": "Minutos por $1 (donación)",
-      "default": 1
-    },
-    {
-      "name": "bitsPerUnit",
-      "type": "number",
-      "label": "Bits por 1 minuto",
-      "default": 100
-    },
     {
       "name": "popupDuration",
       "type": "number",
@@ -61,25 +19,55 @@
       "default": 3
     },
     {
-      "name": "goalHours",
+      "name": "tier1Minutes",
+      "type": "number",
+      "label": "Tier1 minutos",
+      "default": 5
+    },
+    {
+      "name": "tier2Minutes",
+      "type": "number",
+      "label": "Tier2 minutos",
+      "default": 10
+    },
+    {
+      "name": "tier3Minutes",
+      "type": "number",
+      "label": "Tier3 minutos",
+      "default": 30
+    },
+    {
+      "name": "donationPerDollar",
+      "type": "number",
+      "label": "Segundos por $1",
+      "default": 60
+    },
+    {
+      "name": "bitsPerUnit",
+      "type": "number",
+      "label": "Bits por unidad para 1 min",
+      "default": 100
+    },
+    {
+      "name": "hoursGoal",
       "type": "number",
       "label": "Meta horas (tiempo)",
       "default": 24
     },
     {
-      "name": "goalSubs",
+      "name": "subsGoal",
       "type": "number",
       "label": "Meta subs",
       "default": 100
     },
     {
-      "name": "goalDonations",
+      "name": "donationsGoal",
       "type": "number",
       "label": "Meta donaciones $",
       "default": 50
     },
     {
-      "name": "goalCheers",
+      "name": "cheersGoal",
       "type": "number",
       "label": "Meta cheers",
       "default": 1000
