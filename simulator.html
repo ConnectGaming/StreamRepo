@@ -1,21 +1,25 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Simulador</title></head><body>
-<h3>Simulador de eventos</h3>
-<iframe src="widget.html" style="width:100%;height:480px;border:1px solid #ccc"></iframe>
-<div style="margin-top:10px">
-<button onclick="simulate('donation',5)">Simular Donación $5</button>
-<button onclick="simulate('cheer',100)">Simular Cheer 100</button>
-<button onclick="simulate('sub',1)">Simular Sub Tier1</button>
-<button onclick="simulate('sub',2)">Simular Sub Tier2</button>
-<button onclick="simulate('subgift',1)">Simular Gift 3 Tier1</button>
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Simulator</title>
+<link rel="stylesheet" href="widget.css">
+</head><body>
+<h2>Simulador local - Subathon Widget</h2>
+<iframe src="index.html" style="width:100%;height:400px;border:1px solid #ccc"></iframe>
+<div style="margin-top:12px">
+<button onclick="simulate('donation',5)">Donación $5</button>
+<button onclick="simulate('cheer',100)">Cheer 100</button>
+<button onclick="simulate('sub',1)">Sub Tier1</button>
+<button onclick="simulate('sub',2)">Sub Tier2</button>
+<button onclick="simulate('subgift',1)">Gifted 1 Tier1</button>
 </div>
 <script>
 function simulate(type,amt){
-  const detail = { type: 'onEventReceived', detail: {} };
-  if(type==='donation'){ detail.detail = { type:'tip-latest', data:{name:'Tester', amount:amt} }; }
-  if(type==='cheer'){ detail.detail = { type:'cheer', data:{name:'Cheerer', amount:amt} }; }
-  if(type==='sub'){ detail.detail = { type:'subscriber-latest', data:{name:'Subber', tier:amt, subPlanLevel:amt} }; }
-  if(type==='subgift'){ detail.detail = { type:'subscription-gifted', data:{sender:'Gifter', giftCount:3, subPlanLevel:1} }; }
-  window.frames[0].contentWindow.dispatchEvent(new CustomEvent('onWidgetEvent', {detail}));
+  const detail = { type: (type==='donation'?'donation-latest': type==='cheer'?'cheerPurchase-latest': type==='sub'?'subscriber-latest':'subscription-gifted'),
+                   data: {} };
+  if(type==='donation'){ detail.data = { amount: amt, name:'Tester' }; }
+  if(type==='cheer'){ detail.data = { amount: amt, name:'Cheerer' }; }
+  if(type==='sub'){ detail.data = { name:'Subber', subPlanLevel: amt }; }
+  if(type==='subgift'){ detail.data = { sender:'Gifter', giftCount: 3, subPlanLevel:1 }; }
+  window.frames[0].contentWindow.dispatchEvent(new CustomEvent('onWidgetEvent',{detail}));
 }
 </script>
 </body></html>
